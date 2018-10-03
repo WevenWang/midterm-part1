@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Client-side Templating</title>
+</head>
+<body>
+
+	 <div id="loading"></div>
+
+	 <div id="results">
+    <template id="template">
+      {{#each restaurants}}
+          <div class="restaurant">
+
+              <h3>Name: {{attributes.name}}</h3>
+              <p> City: {{attributes.city}}</p>
+
+              
+
+            <p> Owners:
+              <ul>
+                {{#each attributes.owners}}
+                <li>{{this.name}}</li>
+                {{/each}}
+              </ul>
+            </p>
+
+            <a href=
+      				{{attributes.yelp}} target="_blank">Check us out on Yelp.</a>
+
+
+      		<br></br>
+
+            
+            <!-- <a href=
+      				"https://www.instagram.com/{{attributes.instagram}}" target="_blank">Instagram.</a> -->
+
+      		<p>
+                {{link attributes.instagram}}
+             </p>
+
+
+
+              {{#if attributes.caters}}
+
+
+               <p>Caters</p>
+
+             
+
+                
+
+
+              {{else}}
+
+                <p>Does not Cater</p>
+
+
+              {{/if}}
+
+
+            <br></br>
+
+
+
+
+
+
+
+
+          </div>
+
+      {{/each}}
+
+
+
+
+
+
+    </template>
+
+
+
+
+  </div>
+
+
+
+<script src="jquery-3.3.1.js"></script>
+<script src="handlebars-v4.0.11.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
